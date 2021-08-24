@@ -1,6 +1,5 @@
 #!/bin/env python
-#coding:utf8
-
+# -*- coding: utf-8 -*-
 """
 redis dump and restore
 work if redis server has [dump] and [restore] command (Available since 2.6.0)
