@@ -5,9 +5,6 @@
 redis dump and restore
 work if redis server has [dump] and [restore] command (Available since 2.6.0)
 dump file not suppose to readable
-python 2.7
-python 3.7
-by wdg@dba in 20190123
 """
 import re
 import time
@@ -37,10 +34,15 @@ def redis_fuzzy_search(redis_client, match, count=100, match_len=10, max_try=10)
         result += r
         i += 1
         
-        # 取到值并满足长度要求
-        if (match_len and len(result)>=match_len) or (not match_len and len(result)):
+        if not match_len and len(result):
             yield result
-            result = []            
+            result = []
+        
+        # 取到值并满足长度要求
+        if match_len and len(result)>=match_len: 
+            yield result
+            result = []
+            break
         
         # 遍历结束或者达到遍历上限
         if (not cursor) or (max_try and i>=max_try):
