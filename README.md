@@ -1,6 +1,7 @@
 # redis-dr
 
-[![Python 2.7|3.7](https://img.shields.io/badge/python-2.7%7C3.5%7C3.7-blue.svg)] 
+[![Python 2.7|3.7](https://img.shields.io/badge/python-2.7%7C3.7-blue.svg)]() 
+
 redis dump and restore  
 
 
